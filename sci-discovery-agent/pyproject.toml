@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scidisc"
+version = "0.1.0"
+description = "An LLM agent that discovers scientific laws from noisy data, with sandboxed formula execution and a held-out extrapolation benchmark."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy"]
+
+[project.optional-dependencies]
+anthropic = ["anthropic"]
+dev = ["pytest"]
+
+[project.scripts]
+scidisc = "scidisc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
